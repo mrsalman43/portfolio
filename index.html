@@ -698,8 +698,6 @@
                                 <p id="thankYouMessage" style="display:none;">Thank you! Your message has been successfully sent. We will contact you soon.</p>
                             </div>
                         </form>
-                        
-                        
                     </div>
                 </div>
             </div>
@@ -725,46 +723,37 @@
           </a>
     </footer>
     <!-- JAVASCRIPT FILES -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/jquery.sticky.js"></script>
-        <script src="assets/js/click-scroll.js"></script>
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <script src="assets/js/magnific-popup-options.js"></script>
-        <script src="assets/js/custom.js"></script>
+     <script src="assets/js/jquery.min.js"></script>
+     <script src="assets/js/bootstrap.min.js"></script>
+     <script src="assets/js/jquery.sticky.js"></script>
+     <script src="assets/js/click-scroll.js"></script>
+     <script src="assets/js/jquery.magnific-popup.min.js"></script>
+     <script src="assets/js/magnific-popup-options.js"></script>
+     <script src="assets/js/custom.js"></script>
     <script>
-$(document).ready(function () {
-    $('#thankYouMessage').hide();
-    $('#overlay').hide();
-
-    $('#custom-form').on('submit', function (e) {
-        e.preventDefault(); // Stop normal submission to validate first
-        $('.feilds').remove();
-
-        // Client-side validation
-        if ($('#name').val() !== '' && $('#email').val() !== '' && $('#message').val() !== '') {
-            $('#overlay').show();
-
-            // Let the form submit normally to your PHP server
-            this.submit(); // Will go to https://czonepk.com/mrslmn/mail.php
-
-            // Optional: Show success message immediately
-            // If you want, you can rely on PHP to print it after redirect
-            $('#thankYouMessage').show();
-            setTimeout(function () { 
-                $('#thankYouMessage').hide();
-                $('#custom-form').trigger("reset");
-            }, 3000);
-
-        } else {
-            $('#thankYouMessage').after('<div class="feilds text-danger">All fields are required</div>');
-        }
-    });
-});
-</script>
-
-</body>
+         $(document).ready(function () {
+             $('#thankYouMessage').hide();
+             $('#overlay').hide();
+             $('#custom-form').on('submit', function (e) {
+                 e.preventDefault(); 
+                 $('.feilds').remove();
+                 if ($('#name').val() !== '' && $('#email').val() !== '' && $('#message').val() !== '') {
+                     $('#overlay').show();
+                     this.submit(); 
+                     $('#thankYouMessage').show();
+                     setTimeout(function () { 
+                         $('#thankYouMessage').hide();
+                         $('#custom-form').trigger("reset");
+                     }, 3000);
+                 } else {
+                     $('#thankYouMessage').after('<div class="feilds text-danger">All fields are required</div>');
+                 }
+             });
+         });
+      </script>
+   </body>
 </html>
+
 
 
 
