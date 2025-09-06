@@ -749,9 +749,9 @@
                         $('#overlay').show(); 
             
                         $.ajax({
-                            url: 'https://czonepk.com/mrslmn/mail.php',
+                            url: 'https://czonepk.com/mrslmn/mail.php', 
                             method: 'POST',
-                            data: formData,
+                            data: $('#custom-form').serialize(),
                             success: function(response) {
                                 $('#overlay').hide(); 
                                 $('#thankYouMessage').show();
@@ -762,10 +762,11 @@
                             },
                             error: function(jqXHR, textStatus, errorThrown) {
                                 $('#overlay').hide(); 
-                                alert('Request failed: ' + textStatus, errorThrown);
-                                alert('Response text: ' + jqXHR.responseText);
+                                console.error('Request failed: ' + textStatus, errorThrown);
+                                console.error('Response:', jqXHR.responseText);
                             }
                         });
+
                     } else {
                         $('#thankYouMessage').after('<div class="feilds text-danger">All fields are required</div>');
                     }
@@ -775,6 +776,7 @@
 
 </body>
 </html>
+
 
 
 
