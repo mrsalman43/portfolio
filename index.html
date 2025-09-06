@@ -731,7 +731,7 @@
      <script src="assets/js/magnific-popup-options.js"></script>
      <script src="assets/js/custom.js"></script>
     <script>
-        $(document).ready(function () {
+     $(document).ready(function () {
     $('#thankYouMessage').hide();
     $('#overlay').hide();
 
@@ -742,8 +742,8 @@
         if ($('#name').val() !== '' && $('#email').val() !== '' && $('#message').val() !== '') {
             $('#overlay').show();
 
-            // Submit using native form submit
-            $('#custom-form')[0].submit(); 
+            // Submit via the native DOM element
+            this.submit(); // 'this' is the form, now safe because button id != 'submit'
 
             $('#thankYouMessage').show();
             setTimeout(function () { 
@@ -759,6 +759,7 @@
       </script>
    </body>
 </html>
+
 
 
 
