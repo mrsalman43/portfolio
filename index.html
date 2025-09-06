@@ -730,35 +730,30 @@
      <script src="assets/js/jquery.magnific-popup.min.js"></script>
      <script src="assets/js/magnific-popup-options.js"></script>
      <script src="assets/js/custom.js"></script>
-    <script>
-   $(document).ready(function () {
-    $('#thankYouMessage').hide();
-    $('#overlay').hide();
-
-    $('#custom-form').on('submit', function (e) {
-        e.preventDefault(); 
-        $('.feilds').remove();
-
-        if ($('#name').val() !== '' && $('#email').val() !== '' && $('#message').val() !== '') {
-            $('#overlay').show();
-
-            // Use native submit
-            this.submit(); // now safe, because the form's submit method is not overwritten
-
-            $('#thankYouMessage').show();
-            setTimeout(function () { 
-                $('#thankYouMessage').hide();
-                $('#custom-form').trigger("reset");
-            }, 3000);
-        } else {
-            $('#thankYouMessage').after('<div class="feilds text-danger">All fields are required</div>');
-        }
-    });
-});
-
+     <script>
+         $(document).ready(function () {
+             $('#thankYouMessage').hide();
+             $('#overlay').hide();
+             $('#custom-form').on('submit', function (e) {
+                 e.preventDefault(); 
+                 $('.feilds').remove();
+                 if ($('#name').val() !== '' && $('#email').val() !== '' && $('#message').val() !== '') {
+                     $('#overlay').show();
+                     this.submit(); 
+                     $('#thankYouMessage').show();
+                     setTimeout(function () { 
+                         $('#thankYouMessage').hide();
+                         $('#custom-form').trigger("reset");
+                     }, 3000);
+                 } else {
+                     $('#thankYouMessage').after('<div class="feilds text-danger">All fields are required</div>');
+                 }
+             });
+         });
       </script>
    </body>
 </html>
+
 
 
 
