@@ -731,7 +731,7 @@
      <script src="assets/js/magnific-popup-options.js"></script>
      <script src="assets/js/custom.js"></script>
     <script>
-         $(document).ready(function () {
+        $(document).ready(function () {
              $('#thankYouMessage').hide();
              $('#overlay').hide();
              $('#custom-form').on('submit', function (e) {
@@ -739,20 +739,35 @@
                  $('.feilds').remove();
                  if ($('#name').val() !== '' && $('#email').val() !== '' && $('#message').val() !== '') {
                      $('#overlay').show();
-                     this.submit(); 
-                     $('#thankYouMessage').show();
-                     setTimeout(function () { 
-                         $('#thankYouMessage').hide();
-                         $('#custom-form').trigger("reset");
-                     }, 3000);
+                     var formData = $(this).serialize(); 
+                     $.ajax({
+                         url: $(this).attr('action'), 
+                         method: 'POST',
+                         data: formData,
+                         success: function(response) {
+                             $('#overlay').hide();
+                             $('#thankYouMessage').show();
+                             $('#custom-form').trigger("reset");
+         
+                             setTimeout(function () { 
+                                 $('#thankYouMessage').hide();
+                             }, 3000);
+                         },
+                         error: function(jqXHR, textStatus, errorThrown) {
+                             $('#overlay').hide();
+                             alert('Request failed: ' + textStatus);
+                         }
+                     });
                  } else {
                      $('#thankYouMessage').after('<div class="feilds text-danger">All fields are required</div>');
                  }
              });
          });
+
       </script>
    </body>
 </html>
+
 
 
 
