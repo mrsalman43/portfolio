@@ -1,7 +1,4 @@
-
-
 <?php
-
 if (isset($_POST['name']) && $_POST['name'] != '') {
     $name = htmlspecialchars(trim($_POST['name']));
     $email = htmlspecialchars(trim($_POST['email']));
@@ -11,7 +8,6 @@ if (isset($_POST['name']) && $_POST['name'] != '') {
     $to_user = $email; // User's email address
     $subject_admin = "New Contact Form Submission";
     $subject_user = "Thank You for Contacting Us";
-
     // Admin email body
     $body_admin = '
     <html>
@@ -97,7 +93,6 @@ if (isset($_POST['name']) && $_POST['name'] != '') {
                     <td><strong>Message:</strong></td>
                     <td>' . nl2br($message) . '</td>
                 </tr>
-            
             </table>
         </div>
         <div class="footer">
@@ -106,7 +101,6 @@ if (isset($_POST['name']) && $_POST['name'] != '') {
     </div>
 </body>
     </html>';
-
     // User email body
     $body_user = '
     <html>
@@ -171,7 +165,7 @@ if (isset($_POST['name']) && $_POST['name'] != '') {
             <div class="content">
                 <table>
                     <tr>
-                        <td colspan="2"><strong>Dear '.$name.',</strong></td>
+                        <td colspan="2"><strong>Dear ' . $name . ',</strong></td>
                     </tr>
                     <tr>
                     <td colspan="2">We appreciate your interest in our services. Our team will review your project requirements and get back to you shortly.</td>
@@ -193,16 +187,10 @@ if (isset($_POST['name']) && $_POST['name'] != '') {
         </div>
     </body>
     </html>';
-
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-
-    // Send email to admin
     $admin_sent = mail($to_admin, $subject_admin, $body_admin, $headers);
-
-    // Send email to user
     $user_sent = mail($to_user, $subject_user, $body_user, $headers);
-
     if ($admin_sent && $user_sent) {
         echo "Message sent successfully!";
     } else {
@@ -210,4 +198,3 @@ if (isset($_POST['name']) && $_POST['name'] != '') {
     }
 }
 ?>
-
