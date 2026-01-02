@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,6 +18,7 @@
     <link href="assets/css/magnific-popup.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
+
 <body>
     <div id="overlay" style="display:none;">
         <div class="spinner-border text-light" role="status">
@@ -108,7 +110,8 @@
                                     Science</strong>, and over 4 years of hands-on experience in front-end and back-end
                                 development. My technical expertise spans a wide array of technologies including
                                 <strong>HTML, CSS, Bootstrap, JavaScript, jQuery, Ajax, PHP, MySQL, WordPress, Laravel,
-                                    and CodeIgniter.</strong></p>
+                                    and CodeIgniter.</strong>
+                            </p>
                             <p>Throughout my career, I have collaborated with seasoned developers to spearhead and
                                 successfully manage large-scale and intricate design projects for prestigious corporate
                                 clients. My proficiency in creating visually appealing, <strong>user-friendly, and
@@ -127,6 +130,14 @@
                                 comprehensive skill set that enables me to design and develop robust web applications,
                                 implement intricate backend functionalities, and create dynamic user interfaces using
                                 the latest web technologies.</p>
+                            <p>
+                                <strong>Collaboration & Leadership:</strong> Collaborated closely with senior developers and cross-functional teams to successfully deliver large-scale and high-impact projects for prestigious corporate clients, maintaining strong communication throughout the development cycle.<br>
+                                <strong>WordPress, WooCommerce & Plugin Development Expertise:</strong> Highly experienced in developing custom WordPress and WooCommerce websites, custom plugins, and REST API integrations. <span class="ms-underline">Skilled in building custom product types, checkout processes, dynamic pricing rules, and payment gateway integrations. Extensive experience with WooCommerce hooks, filters, and ACF (Advanced Custom Fields) for creating flexible and scalable eCommerce functionalities. Proficient in developing custom plugins to extend site functionality, as well as integrating third-party APIs such as payment gateways (Stripe, PayPal, Octo, etc.), CRM systems, and external inventory management tools.</span><br>
+                                <strong>Comprehensive Development:</strong> Delivered complete front-end and back-end
+                                web solutions — from UI/UX implementation to database design and server-side logic — ensuring seamless
+                                performance, responsiveness, and user experience across devices.<br>
+                                <strong>Driven & Dedicated:</strong> A highly driven and detail-oriented developer with excellent problem-solving and communication skills. Passionate about innovation and continuous learning, eager to contribute technical expertise and leadership to drive organizational growth and project success.
+                            </p>
                             <p>I provide a 100% guarantee on the quality and reliability of my code. As an expert in
                                 both <span class="ms-text-color">front-end</span> and <span
                                     class="ms-text-color">back-end</span> development, I am committed to delivering
@@ -229,15 +240,15 @@
                                     <p class="featured-text">Years of Experiences</p>
                                 </div>
                                 <div class="col-lg-6 col-6 featured-border-start featured-border-bottom ps-5 py-2">
-                                    <strong class="featured-numbers">50+</strong>
+                                    <strong class="featured-numbers">30+</strong>
                                     <p class="featured-text">Happy Customers</p>
                                 </div>
                                 <div class="col-lg-6 col-6 pt-4">
-                                    <strong class="featured-numbers">30+</strong>
+                                    <strong class="featured-numbers">20+</strong>
                                     <p class="featured-text">Project Finished</p>
                                 </div>
                                 <div class="col-lg-6 col-6 featured-border-start ps-5 pt-4">
-                                    <strong class="featured-numbers">10+</strong>
+                                    <strong class="featured-numbers">7+</strong>
                                     <p class="featured-text">International Projects</p>
                                 </div>
                             </div>
@@ -362,8 +373,8 @@
                                         <li class="footer-menu-item"><a href="https://casini-cavalli.com/"
                                                 target="_blank" class="footer-menu-link">Casini Cavalli</a>
                                         </li>
-                                        <li class="footer-menu-item"><a href="https://vincycart.com/"
-                                                target="_blank" class="footer-menu-link">VincyCart</a>
+                                        <li class="footer-menu-item"><a href="https://vincycart.com/" target="_blank"
+                                                class="footer-menu-link">VincyCart</a>
                                         </li>
                                         <li class="footer-menu-item"><a href="https://togetherwesucceed.co.uk/"
                                                 target="_blank" class="footer-menu-link">Job together</a>
@@ -559,7 +570,8 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-12 mt-5 mt-lg-0">
-                        <form id="custom-form" action="https://formspree.io/f/xqeaqdno" method="post" class="custom-form contact-form" role="form">
+                        <form id="custom-form" action="https://formspree.io/f/xqeaqdno" method="post"
+                            class="custom-form contact-form" role="form">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <div class="form-floating">
@@ -790,8 +802,8 @@
                     $('.feilds').hide();
                 });
                 if ($('#name').val() !== '' && $('#email').val() !== '' && $('#message').val() !== '') {
-                        var form = $('#custom-form');
-                        var formData = form.serialize();
+                    var form = $('#custom-form');
+                    var formData = form.serialize();
                     $('#overlay').show();
                     $.ajax({
                         url: form.attr('action'),
@@ -808,7 +820,7 @@
                         error: function (jqXHR, textStatus, errorThrown) {
                             $('#overlay').hide();
                             $('#thankYouMessage').show();
-                             setTimeout(function () {
+                            setTimeout(function () {
                                 $('#thankYouMessage').hide();
                             }, 3000);
                         }
@@ -820,4 +832,5 @@
         });
     </script>
 </body>
+
 </html>
