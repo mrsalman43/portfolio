@@ -553,7 +553,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-12 mt-5 mt-lg-0">
-                        <form id="custom-form" method="post" class="custom-form contact-form" role="form">
+                        <form id="custom-form" action="https://formspree.io/f/xqeaqdno" method="post" class="custom-form contact-form" role="form">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <div class="form-floating">
@@ -789,7 +789,7 @@
                     var formData = $('#custom-form').serialize();
                     $('#overlay').show();
                     $.ajax({
-                        url: 'mail.php',
+                        url: form.attr('action'),
                         method: 'POST',
                         data: formData,
                         success: function (response) {
