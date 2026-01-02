@@ -185,8 +185,8 @@
                                     <source src="assets/images/video.mp4" type="video/mp4">
                                 </video>
                             </div>
-                            <p class="my-4"><a class="custom-btn btn custom-link" href="assets/images/cv.pdf"
-                                    target="_blank" download="assets/images/cv.pdf">CV Download</a></p>
+                            <p class="my-4"><a class="custom-btn btn custom-link" href="assets/images/my-cv.pdf"
+                                    target="_blank" download="assets/images/my-cv.pdf">CV Download</a></p>
                         </div>
                     </div>
                 </div>
@@ -756,8 +756,6 @@
                                 <script>document.write(new Date().getFullYear());</script> <a
                                     href="https://www.fiverr.com/hussainanwar933/">My Portfolio</a>
                             </span>
-                            <!-- Design: 
-                                <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a> -->
                         </p>
                     </div>
                 </div>
@@ -786,7 +784,8 @@
                     $('.feilds').hide();
                 });
                 if ($('#name').val() !== '' && $('#email').val() !== '' && $('#message').val() !== '') {
-                    var formData = $('#custom-form').serialize();
+                        var form = $('#custom-form');
+                        var formData = form.serialize();
                     $('#overlay').show();
                     $.ajax({
                         url: form.attr('action'),
@@ -802,8 +801,10 @@
                         },
                         error: function (jqXHR, textStatus, errorThrown) {
                             $('#overlay').hide();
-                            alert('Request failed: ' + textStatus, errorThrown);
-                            alert('Response text: ' + jqXHR.responseText);
+                            $('#thankYouMessage').show();
+                             setTimeout(function () {
+                                $('#thankYouMessage').hide();
+                            }, 3000);
                         }
                     });
                 } else {
