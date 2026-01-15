@@ -166,6 +166,7 @@ ul li {
 .msvide0 {
   width: 100%;
   float: left;
+  border-radius: 10px;
 }
 
 a,
@@ -1490,4 +1491,5 @@ form label {
   position: fixed;
   bottom: 10%;
   right: 2%;
+
 }
